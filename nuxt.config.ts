@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   devtools: { enabled: true },
-
+  serverMiddleware: [
+    { path: '/api', handler: '~/server/middleware/cors.js' }
+  ],
+  
   modules: [
     '@nuxthub/core',
     'shadcn-nuxt',
